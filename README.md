@@ -28,3 +28,5 @@ Unutar Microsoft Visual Studia je kreiran novi ASP.NET Core Web App (MVC) projek
 2. Otvorit će se početna web stranica sa izbornikom na kojem se nalazi poveznica na stranicu sa proizvodima.
 3. Kada se otvori stranica sa proizvodima, pozvat će se kontroler `Product` i akcija `Index` koja će dohvatiti sve proizvode iz baze podataka.
 4. Na stranici s proizvodima se još nalaze dvije forme (search i filter), te nazivi svakog proizvoda koji unutar tablice predstavljaju gumbe za prikaz njihovih detalja.
+5. Unosom teksta u search polje (npr. Product2) i pritiskom na gumb s povećalom prikazati će se svi oni proizvodi koji sadrže uneseni tekst u svom nazivu.
+6. Unosom kategorije (npr. Toy ili War), te minimalnih i maksimalnih vrijednosti cijena prikazati će se proizvodi koji odgovaraju unesenim parametrima. 
