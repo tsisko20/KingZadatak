@@ -13,6 +13,11 @@ namespace KingZadatak.Controllers
         {
             _db = db;
         }
+
+        /// <summary>
+        /// Retrieves a list of all products.
+        /// </summary>
+        /// <returns>A view with the list of products.</returns>
         public IActionResult Index()
         {
             List<ProductDetails> ProductDetailsList = _db.Products.ToList();
@@ -33,7 +38,12 @@ namespace KingZadatak.Controllers
                 Thumbnail = productDetails.Thumbnail
             };
         }
-
+        
+        /// <summary>
+        /// Retrieves the details of a specific product.
+        /// </summary>
+        /// <param name="id">The ID of the product.</param>
+        /// <returns>A view with the product details.</returns>
         public IActionResult Details(int? id)
         {
 
@@ -47,6 +57,13 @@ namespace KingZadatak.Controllers
 
         }
 
+        /// <summary>
+        /// Filters products by category and price range.
+        /// </summary>
+        /// <param name="category">The product category.</param>
+        /// <param name="minPrice">The minimum price.</param>
+        /// <param name="maxPrice">The maximum price.</param>
+        /// <returns>A view with the filtered list of products.</returns>
         public IActionResult Filter(string? category, double? minPrice, double? maxPrice)
         {
             List<ProductDetails> ProductDetailsList = _db.Products.
@@ -58,6 +75,11 @@ namespace KingZadatak.Controllers
             return View(objProductList);
         }
 
+        /// <summary>
+        /// Searches for products by title.
+        /// </summary>
+        /// <param name="searchString">The search string.</param>
+        /// <returns>A view with the search results.</returns>
         public IActionResult Search(string? searchString)
         {
             List<ProductDetails> ProductDetailsList = _db.Products.
