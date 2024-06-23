@@ -1,0 +1,16 @@
+﻿@model KingZadatak.Models.Product
+
+<div class="container">
+    <div class="d-flex justify-content-center">
+        <h3>@Model.Title</h3>
+    </div>
+    <div class="d-flex justify-content-center">
+        <img src="@Model.Thumbnail" style="width:50%"/>
+    </div>
+    <div class="d-flex justify-content-center">
+        @Model.Price
+    </div>
+    <div class="d-flex justify-content-center">
+        @Model.Description
+    </div>
+</div>

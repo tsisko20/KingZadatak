@@ -1,5 +1,6 @@
-﻿@model List<Product>
+﻿@model List<KingZadatak.Models.Product>
 <h1>Product list</h1>
+
 <table class="table table-bordered table-striped">
     <thead>
     <tr>
@@ -20,12 +21,13 @@
     <tbody>
         @foreach(var obj in Model.OrderBy(u => u.Id))
         {
+            
             <tr>
-                <td>@obj.Title</td>
+                <td><a class="btn btn-info" asp-action="Details" asp-route-id="@obj.Id">@obj.Title</a></td>
                 <td>@obj.Price</td>
                 <td>@obj.Description</td>
                 <td><img src="@obj.Thumbnail" style="width:150px; height:150px" /></td>
-                </tr>
+            </tr>
         }
     </tbody>
 </table>
