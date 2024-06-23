@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace KingZadatak.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20240623111845_SeedProductTable")]
-    partial class SeedProductTable
+    [Migration("20240623201030_SeedDatabaseWithProducts")]
+    partial class SeedDatabaseWithProducts
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -24,7 +24,7 @@ namespace KingZadatak.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("KingZadatak.Models.Product", b =>
+            modelBuilder.Entity("KingZadatak.Models.ProductDetails", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -32,9 +32,18 @@ namespace KingZadatak.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
 
-                    b.Property<string>("Description")
+                    b.Property<string>("Brand")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Category")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
 
                     b.Property<double>("Price")
                         .HasColumnType("float");
@@ -55,6 +64,8 @@ namespace KingZadatak.Migrations
                         new
                         {
                             Id = 1,
+                            Brand = "ToyCreator",
+                            Category = "Toy",
                             Description = "Product1 Description",
                             Price = 5.9900000000000002,
                             Thumbnail = "https://i5.walmartimages.com/seo/CifToys-Trex-Dinosaur-Toys-for-Kids-3-5-T-Rex-Toy-Realistic-Tyrannosaurus-Rex_847a91dd-8df3-4fae-a2a5-1b266bdfd870.c0bc20b87ca2e6ad8246979ab17342dd.jpeg",
@@ -63,14 +74,18 @@ namespace KingZadatak.Migrations
                         new
                         {
                             Id = 2,
-                            Description = "Product3 Description",
+                            Brand = "ToyCreator",
+                            Category = "Toy",
+                            Description = "Product2 Description",
                             Price = 19.989999999999998,
                             Thumbnail = "https://m.media-amazon.com/images/I/51C5TrSt-GL.jpg",
-                            Title = "Product3"
+                            Title = "Product2"
                         },
                         new
                         {
                             Id = 3,
+                            Brand = "ToyCreator",
+                            Category = "War",
                             Description = "Product3 Description",
                             Price = 99.989999999999995,
                             Thumbnail = "https://toyzone.in/cdn/shop/products/723934.jpg?v=1668491719",
