@@ -1,0 +1,49 @@
+﻿@model List<KingZadatak.Models.Product>
+<h1>Product list</h1>
+
+<form asp-action="Search" method="get">
+    <label>Search by name:</label>
+    <input type="text" name="searchString"  />
+    <button  type="submit"><i class="bi bi-search"></i></button>
+</form>
+
+<form asp-action="Filter" method="get">
+    <label>Category Name:</label>
+    <input type="text" name="category"/>
+    <label>Minimum Price:</label>
+    <input type="text" name="minPrice"/>
+    <label>Maximum Price:</label>
+    <input type="text" name="maxPrice" />
+    <button type="submit">Filter</button>
+</form>
+
+<table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Description
+        </th>
+        <th>
+            Image
+        </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach(var obj in Model.OrderBy(u => u.Id))
+        {
+            
+            <tr>
+                <td><a class="btn btn-info" asp-action="Details" asp-route-id="@obj.Id">@obj.Title</a></td>
+                <td>@obj.Price</td>
+                <td>@obj.Description</td>
+                <td><img src="@obj.Thumbnail" style="width:150px; height:150px" /></td>
+            </tr>
+        }
+    </tbody>
+</table>
