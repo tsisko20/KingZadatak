@@ -7,7 +7,7 @@
 namespace KingZadatak.Migrations
 {
     /// <inheritdoc />
-    public partial class AddProductDetailsTableToDb : Migration
+    public partial class SeedDatabaseWithProducts : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -36,7 +36,7 @@ namespace KingZadatak.Migrations
                 values: new object[,]
                 {
                     { 1, "ToyCreator", "Toy", "Product1 Description", 5.9900000000000002, "https://i5.walmartimages.com/seo/CifToys-Trex-Dinosaur-Toys-for-Kids-3-5-T-Rex-Toy-Realistic-Tyrannosaurus-Rex_847a91dd-8df3-4fae-a2a5-1b266bdfd870.c0bc20b87ca2e6ad8246979ab17342dd.jpeg", "Product1" },
-                    { 2, "ToyCreator", "Toy", "Product3 Description", 19.989999999999998, "https://m.media-amazon.com/images/I/51C5TrSt-GL.jpg", "Product3" },
+                    { 2, "ToyCreator", "Toy", "Product2 Description", 19.989999999999998, "https://m.media-amazon.com/images/I/51C5TrSt-GL.jpg", "Product2" },
                     { 3, "ToyCreator", "War", "Product3 Description", 99.989999999999995, "https://toyzone.in/cdn/shop/products/723934.jpg?v=1668491719", "Product3" }
                 });
         }

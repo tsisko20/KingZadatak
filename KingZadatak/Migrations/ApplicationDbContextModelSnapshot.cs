@@ -73,10 +73,10 @@ namespace KingZadatak.Migrations
                             Id = 2,
                             Brand = "ToyCreator",
                             Category = "Toy",
-                            Description = "Product3 Description",
+                            Description = "Product2 Description",
                             Price = 19.989999999999998,
                             Thumbnail = "https://m.media-amazon.com/images/I/51C5TrSt-GL.jpg",
-                            Title = "Product3"
+                            Title = "Product2"
                         },
                         new
                         {
