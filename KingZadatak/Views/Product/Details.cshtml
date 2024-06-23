@@ -1,4 +1,4 @@
-﻿@model KingZadatak.Models.Product
+﻿@model KingZadatak.Models.ProductDetails
 
 <div class="container">
     <div class="d-flex justify-content-center">
@@ -8,9 +8,15 @@
         <img src="@Model.Thumbnail" style="width:50%"/>
     </div>
     <div class="d-flex justify-content-center">
-        @Model.Price
+        Cijena proizvoda: @Model.Price
     </div>
     <div class="d-flex justify-content-center">
-        @Model.Description
+        Opis proizvoda: @Model.Description
+    </div>
+    <div class="d-flex justify-content-center">
+        Brand: @Model.Brand
+    </div>
+    <div class="d-flex justify-content-center">
+        Kategorija: @Model.Category
     </div>
 </div>
